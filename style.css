@@ -1,0 +1,14 @@
+body{
+  background-image: url("https://cdn.glitch.com/14cb80e0-455a-4e12-b561-1cef43aac43d%2FwallPAPERasdfghjads%20(2).jpg?v=1617590796115");
+  background-color:snow;
+  text-align:center;
+  font-family: 'Indie Flower', Papyrus, serif;
+}
+
+button{
+    /*Change the width as much as you like, but make sure 
+    margin-left and margin-right + width = 100%*/
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;
+}
