@@ -24,12 +24,16 @@ function preload() {
 }
 
 function setup() {
+  
+  let button2 = createButton('Draw!');
+  button2.mousePressed(newDraw); 
+  
   createCanvas(640, 480);
   background(220);
 
   // Button to reset drawing
-  let button = createButton('clear');
-  button.mousePressed(startDrawing);
+  //let button = createButton('clear');
+  //button.mousePressed(startDrawing);
   
   // run sketchRNN
   startDrawing();
@@ -40,15 +44,27 @@ function modelReady() {
   startDrawing();
 }
 
+function getDrawValue(){
+  var subject = document.querySelector("#drawingsub");
+}
+
 // Reset the drawing
 function startDrawing() {
+  getDrawValue();
   background(220);
   // Start in the middle
   x = width / 2;
   y = height / 2;
+ // model = ml5.sketchRNN(subject.value);
   model.reset();
   // Generate the first stroke path
   model.generate(gotStroke);
+}
+
+function newDraw(){
+  var subject = document.querySelector("#drawingsub");
+  model = ml5.sketchRNN(subject.value);
+  startDrawing();
 }
 
 function draw() {
